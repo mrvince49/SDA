@@ -1,4 +1,6 @@
-from dronekit import connect, LocationGlobal, 
+turn_radius
 
-def detectStaticCollision(self, latitude, longitude, radius, height):
-    #Draw a parabola 
+def detectStaticCollision(self, next_waypoint, telemetry, stationary_obstacle):
+    #Predict path of plane
+    angle_to_waypoint = math.degrees(math.atan((telemetry.longitude-next_waypoint )))
+    if telemetry.heading != 
