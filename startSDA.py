@@ -1,3 +1,5 @@
+#use execfile('filename.py') to run it in python
+
 from dronekit import connect, VehicleMode, LocationGlobalRelative, LocationGlobal, Command
 import time
 import math
