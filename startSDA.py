@@ -196,5 +196,5 @@ def arm_and_takeoff():
 def get_obstacles():
 	stationary = []
 	moving = []
-	return stationary, movin
+	return stationary, moving
 
