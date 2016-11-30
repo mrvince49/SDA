@@ -1,4 +1,5 @@
-import numpy:
+import numpy as np
+from startSDA import getObstacles
 def getPaths(x, y, z):
     
     t = [-4, -3, -2, -1, 0] #we will assume we can constantly get time reliably within one second since telemetry is operating at 1 Hz
@@ -16,9 +17,12 @@ def getPaths(x, y, z):
     altitude = MovingObstacle.altitude_msl
     
     
-    # determine function for each coordinate (x,y,z)
+    # determine function of time for each coordinate (x,y,z)
     xCoefs = np.polynomial.polynomial.polyfit(t, x, 2)
-    yCoefs = 
+    yCoefs = np.polynomial.polynomial.polyfit(t, y, 2)
+    zCoefs = np.polynomial.polynomial.polyfit(t, z, 2)
+    
+    
 
 #flight path = velocity*t + currentPosition
 #first time through this method will not work because there is not enough data yet
@@ -35,22 +39,28 @@ def getPaths(x, y, z):
 #funct:	coord2meter, meter2coord, dist(loc1, loc2), spd()
 
 numSavedPoints
+movingObstaclesData = []
 xPositions = []
 yPositions = []
 zPositions = []
 
 
-vel = 0; o_Loc = (o.lat,o.lon,o.alt);
+stationary, moving = getObstacles()
+for movingObstacle in moving:
+    movingObstaclesData.
+
+vel = 0
+o_Loc = (o.lat,o.lon,o.alt)
 	while true
-		time.wait(1);
-		o_Loc_New = (o.lat,o.lon,o.alt);
-		vel = coord2meter(o_Loc_New - o_Loc);
-	    o_Loc = o_Loc_New;
+		time.wait(1)
+		o_Loc_New = (o.lat,o.lon,o.alt)
+		vel = coord2meter(o_Loc_New - o_Loc)
+	    o_Loc = o_Loc_New
 	    getPaths(xPositions, yPositions, zPositions)
 
 #super helpful way of calculating linear or quadratic fit
-import numpy.polynomial.polynomial as poly
-coefs = np.polynomial.polynomial.polyfit(x, y, degreeNum (so 2 in our case))
+#import numpy.polynomial.polynomial as poly
+#coefs = np.polynomial.polynomial.polyfit(x, y, degreeNum (so 2 in our case))
 # we can use 1 for linear fit?
 # we need at least two data points for linear fit, three points for quadratic fit
 #x and y are arays
