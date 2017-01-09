@@ -1,4 +1,4 @@
-# SDA
+# Sense, Detect and Avoid
 
 ### Contributing:
 	- please see issues tab and assign yourself a task
