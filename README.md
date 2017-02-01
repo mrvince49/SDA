@@ -18,3 +18,9 @@
 			- sync_routine()
 				- this is where the main function for your program gets called (import it to sdamain.py and call it here)
 			- These two functions are asynchronous, meaning access to global variables/data must be synchronized. I have provided an example in sdamain.py as to what that means[this is probably the most complex and confusing thing you will encounter].
+			
+"""Here is a list of things we need to work on or figure out (the following assumes we have a method that accurately detects obstacles and then creates new waypoints for the plane to follow to avoid the obstacles):
+1) The "next" method of dronekit (how does it work? Will it do what we need it to do?)
+2) Setting up SITL (software in the loop) to test all our code in (we can do this through Dronekit/Mavproxy/MissionPlanner [newest version, but we can't arm the plane in it?])
+3) Figure out what links Mavproxy to MissionPlanner so we can use everything appropriately
+4) Figure out what links Dronekit to MissionPlanner/Mavproxy so that all of our code communicates with plane properly
